@@ -16,6 +16,7 @@ void reverseBuffer(char* buffer, ssize_t size) {
     }
 }
 
+
 int main(int argc, char *argv[])
 {
     string inputfilename = argv[1];
@@ -111,7 +112,7 @@ int main(int argc, char *argv[])
             ssize_t bytesRead;
 
             lseek(inputfile,startindex,SEEK_SET);
-            off_t middlepartsize = endindex - startindex;
+            off_t middlepartsize = endindex - startindex + 1;
 
             while(middlepartsize > 0)
             {
@@ -141,7 +142,7 @@ int main(int argc, char *argv[])
             ssize_t byteswritten;
             ssize_t bytesRead;
             off_t endpartsize = filesize - endindex;
-            lseek(inputfile, endindex , SEEK_SET);
+            lseek(inputfile, endindex + 1 , SEEK_SET);
 
             while(endpartsize > 0)
             {
@@ -158,11 +159,12 @@ int main(int argc, char *argv[])
             bytesRead = read(inputfile, buffer, bytestoread); 
             reverseBuffer(buffer, bytesRead);
             byteswritten = write(outputfile,buffer,bytesRead);
+
             }
         }
     }
 
-    cout<<"File Processed Successfully \n";
+    cout<<"String Reversed Successfully \n";
 
     close(inputfile);
     close(outputfile);
