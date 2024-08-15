@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 #include <fcntl.h>
 #include <iostream>
+#include <sys/stat.h>
+#include <sys/types.h>
 using namespace std;
 
 #define BUFFER_SIZE 40
@@ -28,11 +30,20 @@ int main(int argc, char *argv[])
         startindex = stoll(argv[3]);
         endindex = stoll(argv[4]);
     }
+
+    const char *dirName = "Assignment1";
+    mkdir(dirName, S_IRWXU);
+    
+
     int inputfile = open(inputfilename.c_str(), O_RDONLY);
     
     
-    const char* outputfilename = "output.txt";
-    int outputfile = open(outputfilename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+
+
+    string outputfilename = string(dirName) + "/" + to_string(flag) + "_" + inputfilename;
+
+    // const char* outputfilename = "output.txt";
+    int outputfile = open(outputfilename.c_str(), O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 
 
     char buffer[BUFFER_SIZE];
