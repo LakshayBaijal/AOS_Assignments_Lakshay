@@ -1,0 +1,42 @@
+Taking string from input and reversing it according to conditions
+
+
+● Given a file, you need to reverse the file's contents and store the result in a new file in
+the directory named “Assignment1”.
+● The percentage of the file written should be printed on the console during file writing.
+● The percentage of the file written should be overwritten each time (it shouldn’t be
+written multiple times).
+● The directory created should have read, write, and execute permissions for the user
+who created it.
+● The new file created should have the read and write permissions for the user who
+created it.
+● The program will be tested on LARGE (>1GB) files which could be greater than RAM
+size.
+● If the flag is set to 0, the entire file will be reversed. If the flag is set to 1, the start and
+end indices must be provided as command-line arguments. In this case, the file will be
+reversed in two parts: from the beginning to the start index, and from the end index to
+the end of the document, leaving the portion of the file between the start and end
+indices unchanged. Assume the first character of the document is indexed as 0.● The input file path would be given to you as an argument to your program:
+$ gcc Q1.c / g++ Q1.cpp
+$ ./a.out <input file name> <flag> (either 0 or 1) <start_index> <end_index>
+● The output file must be named "0_<input file name>" if the input flag is 0, and
+"1_<input file name>" if the input flag is 1.
+
+
+
+● Example for flag 0:
+Input: ./a.out A.txt 0 → “Hello, World!”
+Output: ‘Assignment1/0_A.txt’ → “!dlroW ,olleH”
+● Example for flag 1:
+Input :
+./a.out A.txt 1 2 7
+‘A.txt’ → “Hello, World!”
+Output: ‘Assignment1/1_A.txt’ → “eHllo, W!dlro”
+Input :
+./a.out B.txt 1 4 8
+’B.txt’ → ”0123456789abc”
+Output: ’Assignment1/1_B.txt’ → ”321045678cba9”
+Input :
+./a.out C.txt 1 9 25
+’C.txt’ → ”The quick brown fox jumps over the lazy dog”
+Output: ’Assignment1/1_C.txt’ → "kciuq ehT brown fox jumps god yzal eht revo"
