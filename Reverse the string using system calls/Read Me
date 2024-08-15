@@ -1,6 +1,13 @@
 Taking string from input and reversing it according to conditions
 
 
+Run using 
+g++ ReverseTheString.cpp
+./a.out <input_text> 0          -> (Flag 0)
+./a.out <input_text> 1 7 9      -> (Flag 1)
+
+
+Question 
 ● Given a file, you need to reverse the file's contents and store the result in a new file in
 the directory named “Assignment1”.
 ● The percentage of the file written should be printed on the console during file writing.
