@@ -1,8 +1,11 @@
 #include<bits/stdc++.h>
-#include <fcntl.h>
 #include <iostream>
+#include <fcntl.h>
+#include <unistd.h>
 #include <sys/stat.h>
-#include <sys/types.h>
+#include <cstring>
+#include <string>
+
 using namespace std;
 
 #define BUFFER_SIZE 40
@@ -21,6 +24,7 @@ void reverseBuffer(char* buffer, ssize_t size) {
 
 int main(int argc, char *argv[])
 {
+    
     string inputfilename = argv[1];
     int flag = stoi(argv[2]);
     off_t startindex = 0;
@@ -47,8 +51,11 @@ int main(int argc, char *argv[])
 
 
     char buffer[BUFFER_SIZE];
+    int completed = 0;
+    int percentage = 0;
     
     off_t filesize = lseek(inputfile,0,SEEK_END);
+    off_t totalfilesize = filesize;
 
     if(flag==0)
     {
@@ -74,6 +81,13 @@ int main(int argc, char *argv[])
             reverseBuffer(buffer, bytesRead);
             byteswritten = write(outputfile, buffer, bytesRead);
             
+            
+            //percentage progress print
+            completed = completed + (int)(byteswritten);
+            percentage = (completed * 100) / totalfilesize;
+            cout<<"\r"<<percentage<<"%";
+            cout.flush();
+
         }
     }
 
@@ -109,6 +123,11 @@ int main(int argc, char *argv[])
 
                 byteswritten = write(outputfile,buffer,bytesRead);
 
+
+            completed = completed + (int)(byteswritten);
+            percentage = (completed * 100) / totalfilesize;
+            cout<<"\r"<<percentage<<"%";
+            cout.flush();
             }
 
         }
@@ -142,6 +161,11 @@ int main(int argc, char *argv[])
 
                 byteswritten = write(outputfile,buffer,bytesRead);
 
+
+                completed = completed + (int)(byteswritten);
+                percentage = (completed * 100) / totalfilesize;
+                cout<<"\r"<<percentage<<"%";
+                cout.flush();
             }
         }
 
@@ -170,12 +194,17 @@ int main(int argc, char *argv[])
             bytesRead = read(inputfile, buffer, bytestoread); 
             reverseBuffer(buffer, bytesRead);
             byteswritten = write(outputfile,buffer,bytesRead);
+            
 
+            completed = completed + (int)(byteswritten);
+            percentage = (completed * 100) / totalfilesize;
+            cout<<"\r"<<percentage<<"%";
+            cout.flush();
             }
         }
     }
 
-    cout<<"String Reversed Successfully \n";
+    cout<<"\nString Reversed Successfully \n";
 
     close(inputfile);
     close(outputfile);
