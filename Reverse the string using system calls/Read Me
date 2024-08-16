@@ -6,6 +6,9 @@ g++ ReverseTheString.cpp
 ./a.out <input_text> 0          -> (Flag 0)
 ./a.out <input_text> 1 7 9      -> (Flag 1)
 
+g++ Existance and Reverse.cpp
+./a.out <input_text relative path> <output_text relative path> <Directory Relative Path>
+(Output Text should be Flag = 0 or Completely Reversed String
 
 Question 
 ● Given a file, you need to reverse the file's contents and store the result in a new file in
