@@ -3,6 +3,8 @@ Shell Terminal using System Calls
 AOS Assignment 2
 Lakshay Baijal 2024202006
 
+[Screencast from 2024-09-09 02-33-13.webm](https://github.com/user-attachments/assets/cd6b83aa-1384-444e-b1f5-5e5501b89ff2)
+
 Custom Shell
 Overview
 This project is a custom shell implemented in C++. It replicates common shell functionalities, including directory navigation, process management, I/O redirection, and command history. The shell supports various built-in commands and allows for both foreground and background process execution.
