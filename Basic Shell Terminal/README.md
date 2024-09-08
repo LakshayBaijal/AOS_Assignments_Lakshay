@@ -3,7 +3,9 @@ Shell Terminal using System Calls
 AOS Assignment 2
 Lakshay Baijal 2024202006
 
-Custom Shell[Screencast from 2024-09-09 02-39-28.webm](https://github.com/user-attachments/assets/2eeceea7-aa00-4f68-8fff-a6e62d3ef7c5)
+Custom Shell
+
+[Screencast from 2024-09-09 02-39-28.webm](https://github.com/user-attachments/assets/2eeceea7-aa00-4f68-8fff-a6e62d3ef7c5)
 
 
 
