@@ -5,17 +5,22 @@
 
 This assignment is a simple peer-to-peer (P2P) distributed file-sharing system. It involves a tracker and multiple clients that can share files with one another. The clients communicate with the tracker to register and find other peers, and they directly connect to each other to upload and download files.
 
-- In Client Compile using 
+- In Client Compile using
+  
 g++ -pthread -o client client.cpp -lcrypto
 
 - Client Execution
-./client <IP>:<PORT> tracker_info.txt
-eg ./client 127.0.0.1:6000 tracker_info.txt
+  
+./client IP:PORT tracker_info.txt
+
+./client 127.0.0.1:6000 tracker_info.txt
 
 - In Tracker Compile using
+  
 g++ tracker.cpp -o tracker -lpthread
 
 - Tracker Execution
+  
 ./tracker tracker_info.txt 1
 
 ## Menu Based Commands
