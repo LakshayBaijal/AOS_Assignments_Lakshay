@@ -82,7 +82,7 @@ Creates empty .mygit/HEAD, .mygit/config, and .mygit/description files.
 
 ./mygit ls-tree [--name-only] <tree_sha>
 
-
+In my git compression and decompression isnt implemented.
 
 
 
