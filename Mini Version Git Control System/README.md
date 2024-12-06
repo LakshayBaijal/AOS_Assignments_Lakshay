@@ -1,5 +1,4 @@
-# AOS ASSIGNMENT 4
-# Lakshay Baijal 2024202006
+# Mini Version Git Control System
 
 [Screencast from 2024-11-16 01-14-34.webm](https://github.com/user-attachments/assets/237dd371-d331-47dd-9267-9a87e3dfd8ae)
 
@@ -43,45 +42,41 @@
 
 # Commands
 ## Initialize Repository - a new mygit repository in the current directory by creating a .mygit directory containing necessary subdirectories and files.
-
+```bash
 ./mygit init
-
-Creates .mygit/objects, .mygit/hooks, .mygit/info directories.
-
-Creates empty .mygit/HEAD, .mygit/config, and .mygit/description files.
-
+```
 ## Hash Object - Computes the SHA-1 hash of the specified file. Optionally writes the file content to the object store.
-
+```bash
 ./mygit hash-object [-w] <file>
-
+```
 ## Cat File - Displays information about a Git object.
-
+```bash
 ./mygit cat-file <flag> <object_sha>
-
+```
 ## Add Files - Adds specified files or all files in the current directory to the staging area (index).
-
+```bash
 ./mygit add [file1 file2 ... | .]
-
+```
 
 ## Commit Changes - Creates a new commit with the staged changes and an optional commit message.
-
+```bash
 ./mygit commit -m "Commit message"
-
+```
 
 ## View Commit Log - Displays the commit history in reverse chronological order (latest to oldest).
-
+```bash
 ./mygit log
-
+```
 
 ## Write Tree - Writes the current state of the index to a tree object and outputs its SHA-1 hash.
-
+```bash
 ./mygit write-tree
-
+```
 
 ## List Tree - Lists the contents of a tree object.
-
+```bash
 ./mygit ls-tree [--name-only] <tree_sha>
-
+```
 In my git compression and decompression isnt implemented.
 
 
